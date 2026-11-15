@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Login | HELPER</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body data-page="login">
+  <header class="header">
+    <a class="logo" href="../index.html"><b>H</b> HELPER</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="directory.html">Emergency Contacts</a>
+      <a href="../app/index.html#/report">Report Emergency</a>
+      <a href="../app/index.html#/map">Live Map</a>
+      <a class="active" href="login.html">Admin</a>
+    </nav>
+    <a class="btn small outline" href="../index.html">Back to site</a>
+  </header>
+
+  <main class="login">
+    <section class="login-card">
+      <b class="login-mark">H</b>
+      <small>RESTRICTED AREA</small>
+      <h1>Administrator login</h1>
+      <p>Authorised reviewers and administrators only. Sign-ins are logged.</p>
+
+      <form id="login-form" method="post" novalidate>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+
+        <div id="login-error" class="form-error" role="alert"></div>
+        <button class="btn" type="submit">Sign in &rarr;</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <b>HELPER</b>
+    <span>Academic project prototype</span>
+  </footer>
+  <script src="../js/api.js" defer></script>
+  <script src="../js/admin.js" defer></script>
+</body>
+</html>

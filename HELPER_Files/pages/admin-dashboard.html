@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin Dashboard | HELPER</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body data-page="dashboard">
+    <header class="header">
+        <a class="logo" href="../index.html"><b>H</b> HELPER</a>
+        <nav>
+            <a href="../index.html">Public site</a>
+            <a href="directory.html">Directory</a>
+            <a href="../app/index.html#/authority">Incident console</a>
+            <a class="active" href="admin-dashboard.html">Dashboard</a>
+        </nav>
+        <a class="btn small outline" id="signout" href="login.html">Sign out</a>
+    </header>
+
+    <main class="wrap">
+        <small>ADMINISTRATION</small>
+        <h1>Dashboard overview</h1>
+        <p>Review contact records and their evidence status. <span class="who" id="who"></span></p>
+        <div id="dash-error" class="form-error" role="alert"></div>
+
+        <div class="stats">
+            <article>Total records<strong id="st-total">--</strong><small>Live (not archived)</small></article>
+            <article>Verified<strong id="st-verified">--</strong><small>Human approval required</small></article>
+            <article>Partially verified<strong id="st-partial">--</strong><small>Some details unresolved</small></article>
+            <article>Unverified / outdated<strong id="st-unver">--</strong><small>Need evidence or a re-check</small></article>
+        </div>
+
+        <h2>Contact records <span class="count" id="rec-count">0</span></h2>
+        <div class="toolbar">
+            <input id="f-q" type="search" placeholder="Search records" aria-label="Search records" maxlength="100">
+            <select id="f-status" aria-label="Filter by status">
+                <option value="">All statuses</option>
+                <option value="verified">Verified</option>
+                <option value="partially_verified">Partially verified</option>
+                <option value="unverified">Unverified</option>
+                <option value="outdated">Outdated</option>
+            </select>
+        </div>
+        <div class="table-scroll">
+            <table>
+                <thead><tr><th>Contact / service</th><th>Category</th><th>Evidence status</th><th>Number</th><th>Last checked</th></tr></thead>
+                <tbody id="rec-body"></tbody>
+            </table>
+        </div>
+
+        <p class="notice">
+            <b>Phase 1:</b>
+            Sign-in, role checks and read-only record viewing are live. Record editing, AI-assisted review,
+            feedback queue and audit history are planned for the next phases.
+        </p>
+    </main>
+
+    <footer>
+        <b>HELPER</b>
+        <span>Admin area &middot; sign-ins are recorded in the audit log</span>
+    </footer>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/admin.js" defer></script>
+</body>
+</html>

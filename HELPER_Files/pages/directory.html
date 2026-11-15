@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Emergency Directory | HELPER</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body data-page="directory">
+  <header class="header">
+    <a class="logo" href="../index.html"><b>H</b> HELPER</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a class="active" href="directory.html">Emergency Contacts</a>
+      <a href="../app/index.html#/report">Report Emergency</a>
+      <a href="../app/index.html#/map">Live Map</a>
+      <a href="login.html">Admin</a>
+    </nav>
+    <a class="btn small" href="login.html">Admin login</a>
+  </header>
+
+  <main class="wrap">
+    <small>HELPER DIRECTORY</small>
+    <h1>Emergency contacts</h1>
+    <p>Browse contact records and review the source and verification status shown for each entry.</p>
+
+    <div class="search">
+      <div class="search-row">
+        <div>
+          <label for="q">Search contacts</label>
+          <input id="q" type="search" maxlength="100" autocomplete="off" placeholder="Search by service, number, organization or keyword">
+        </div>
+        <div>
+          <label for="area">Area</label>
+          <input id="area" type="search" maxlength="100" autocomplete="off" placeholder="e.g. Sylhet">
+        </div>
+      </div>
+      <div class="chips" role="group" aria-label="Filter by category">
+        <button type="button" class="active" data-category="" aria-pressed="true">All services</button>
+        <button type="button" data-category="medical" aria-pressed="false">Medical</button>
+        <button type="button" data-category="fire" aria-pressed="false">Fire</button>
+        <button type="button" data-category="police" aria-pressed="false">Police</button>
+        <button type="button" data-category="disaster" aria-pressed="false">Disaster</button>
+        <button type="button" data-category="other" aria-pressed="false">Other</button>
+      </div>
+    </div>
+
+    <details class="legend">
+      <summary>What do the verification labels mean?</summary>
+      <dl id="legend-list"></dl>
+    </details>
+
+    <h2>Records <span class="muted" id="count" aria-live="polite"></span></h2>
+
+    <div id="records" aria-live="polite"></div>
+    <button type="button" id="more" class="btn outline more" hidden>Show more</button>
+
+    <p class="notice">
+      <b>Important:</b> A label shows what evidence we hold; it does not guarantee a number is active.
+      We never invent a number. Confirm emergency numbers with official authorities.
+    </p>
+  </main>
+
+  <footer>
+    <b>HELPER</b>
+    <span>Academic project prototype</span>
+  </footer>
+  <script src="../js/api.js" defer></script>
+  <script src="../js/public.js" defer></script>
+</body>
+</html>
